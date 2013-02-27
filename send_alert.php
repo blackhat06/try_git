@@ -19,11 +19,12 @@ $mail->AddAmazonSESKey('AKIAJB3LQZB6PTF3KMJQ','svDQ8E3zJCfDO8uPTj0L2TLHYcxOZFpIv
 $mail->From = 'care@dialhealth.com';
 $mail->FromName = 'vikas';
 $mail->AddAddress('vikasruhil06@gmail.com','vikasruhil');
-$mail->Subject = 'Host Info';
-$mail->Body = '$service.$time1.$staus.$computer';
+$mail->Subject = 'Service '.$service.' is '. $status;
+$mail->Body = 'Service '.$service.' on System '.$computer.' is '.$status.' at '. $time1 ; 
 $mail->Send(); // send message
-      
 
+//--- The part below sends sms.
+	
 	$request="";
 	$param['method']='sendMessage';
         $param['send_to'] = 9220475321;
